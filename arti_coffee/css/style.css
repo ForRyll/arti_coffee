@@ -1,0 +1,421 @@
+/* Font pakai Google Font biar cantik (misal: Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Gradasi warna background sesuai gambar */
+    background: linear-gradient(135deg, #D7A99C 0%, #F5E6E0 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.card-custom {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo-img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-radius: 25px;
+    padding: 12px 20px;
+    border: 1px solid #ced4da;
+    margin-bottom: 15px;
+}
+
+.btn-coffee {
+    background-color: #C89F81; /* Warna tombol coklat muda */
+    color: white;
+    border-radius: 25px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-coffee:hover {
+    background-color: #b08b6f;
+}
+
+.footer-text {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.input-group-text {
+    background: transparent;
+    border-left: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+}
+
+/* Penyesuaian border input agar nyambung dengan icon mata */
+.input-with-icon {
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+}
+
+/* --- TAMBAHAN UNTUK DASHBOARD (COFFEE THEME) --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --coffee-dark: #4E342E;
+    --coffee-light: #C89F81;
+    --coffee-bg: #Fdfbf7;
+}
+
+/* KUNCI LAYAR UTAMA */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--coffee-bg);
+    overflow: hidden; /* KUNCI: Body tidak bisa discroll */
+    height: 100vh;    /* Tinggi body pas selayar penuh */
+    margin: 0;
+}
+
+/* WRAPPER UTAMA */
+#wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Paksa tinggi wrapper 100% layar */
+}
+
+/* --- BAGIAN KIRI: SIDEBAR (FIXED / SCROLLABLE SENDIRI) --- */
+#sidebar-wrapper {
+    width: 260px;
+    height: 100vh; /* Tinggi Full */
+    background-color: var(--coffee-dark);
+    color: #fff;
+    flex-shrink: 0; /* Jangan mau mengecil/gepeng */
+    overflow-y: auto; /* Kalau menu panjang, sidebar scroll sendiri */
+    transition: margin 0.3s;
+    z-index: 1000;
+}
+
+/* Header Sidebar (Logo Art'i Coffee) */
+.sidebar-heading {
+    padding: 0 1rem;          /* Padding Kiri-Kanan saja */
+    height: 80px;             /* KITA KUNCI TINGGINYA BIAR LEGA */
+    display: flex;            /* Pakai Flexbox */
+    align-items: center;      /* Ratakan Vertikal (Tengah Atas-Bawah) */
+    justify-content: center;  /* Ratakan Horizontal (Tengah Kiri-Kanan) */
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    white-space: nowrap;      /* Teks dilarang turun baris */
+}
+
+.list-group-item {
+    padding: 1rem 1.5rem;
+    background-color: transparent;
+    color: #D7CCC8;
+    border: none;
+    white-space: nowrap; /* Tulisan jangan turun baris */
+}
+
+.list-group-item:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.list-group-item.active {
+    background-color: var(--coffee-light);
+    color: #fff;
+    font-weight: 600;
+    border-left: 4px solid #fff;
+}
+
+/* --- BAGIAN KANAN: KONTEN UTAMA (SCROLLABLE SENDIRI) --- */
+#page-content-wrapper {
+    flex-grow: 1; /* Ambil sisa lebar layar */
+    height: 100vh; /* Tinggi Full */
+    overflow-y: auto; /* KUNCI: Cuma bagian ini yang bisa discroll */
+    background-color: var(--coffee-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Atas (Di dalam konten kanan) */
+.navbar-top {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 15px 20px;
+    flex-shrink: 0; /* Jangan mengecil saat discroll */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Container Isi Dashboard */
+.container-fluid {
+    padding: 20px 30px;
+}
+
+/* CARD STATISTIK */
+.card-stat {
+    background: #fff;
+    border: none;
+    border-radius: 15px; /* Lebih rounded */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: 0.3s;
+    height: 100%;
+}
+
+.card-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.icon-box {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+/* Warna Icon */
+.bg-coffee-light { background-color: #EFEBE9; color: #5D4037; }
+.bg-green-light { background-color: #E8F5E9; color: #2E7D32; }
+.bg-orange-light { background-color: #FFF3E0; color: #EF6C00; }
+.bg-blue-light { background-color: #E3F2FD; color: #1565C0; }
+
+.table-header-coffee {
+    background-color: #EFEBE9;
+    color: #4E342E;
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: -260px; /* Sembunyi by default di HP */
+        position: fixed; /* Melayang di atas konten kalau di HP */
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --coffee-dark: #4E342E;
+    --coffee-light: #C89F81;
+    --coffee-bg: #Fdfbf7;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; 
+    height: 100vh;
+    background-color: var(--coffee-bg);
+    margin: 0;
+}
+
+#wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- SIDEBAR UTAMA --- */
+#sidebar-wrapper {
+    min-width: 260px;
+    max-width: 260px;
+    background-color: var(--coffee-dark);
+    color: #fff;
+    transition: all 0.3s ease; /* Efek transisi halus */
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* --- LOGIKA MINIMIZE (TOGGLED) --- */
+/* Saat class 'toggled' aktif di wrapper, sidebar mengecil jadi 80px */
+#wrapper.toggled #sidebar-wrapper {
+    min-width: 80px;
+    max-width: 80px;
+}
+
+/* Sembunyikan elemen saat sidebar mengecil */
+#wrapper.toggled .brand-text, 
+#wrapper.toggled .profile-text,
+#wrapper.toggled .section-title,
+#wrapper.toggled .list-group-item span {
+    display: none; /* Hilang */
+}
+
+/* Penyesuaian Layout saat mengecil */
+#wrapper.toggled .sidebar-heading {
+    padding: 1rem 0; /* Heading Logo dirapikan */
+}
+
+#wrapper.toggled .avatar-img {
+    width: 40px; /* Foto profil mengecil */
+}
+
+#wrapper.toggled .list-group-item {
+    text-align: center; /* Ikon ke tengah */
+    padding: 15px 0;
+}
+
+#wrapper.toggled .list-group-item i {
+    font-size: 1.2rem;
+    margin: 0 !important; /* Hilangkan margin kanan ikon */
+}
+
+/* --- ITEM SIDEBAR NORMAL --- */
+.sidebar-heading {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    white-space: nowrap;
+}
+
+.list-group-item {
+    padding: 12px 20px;
+    background-color: transparent;
+    color: #D7CCC8;
+    border: none;
+    white-space: nowrap;
+}
+
+.list-group-item:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.list-group-item.active {
+    background-color: var(--coffee-light);
+    color: #fff;
+    font-weight: 600;
+    border-left: 4px solid #fff;
+}
+
+/* --- KONTEN UTAMA --- */
+#page-content-wrapper {
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--coffee-bg);
+    width: 100%;
+}
+
+/* --- KOMPONEN LAIN --- */
+.navbar-top {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.btn-kapsul {
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    width: auto !important;
+}
+
+.btn-coffee {
+    background-color: var(--coffee-light);
+    color: white;
+    border: none;
+}
+.btn-coffee:hover { background-color: #b08b6f; color: white;}
+
+.card-custom {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: auto; 
+}
+
+.modal-header-coffee { background-color: #4E342E; color: white; }
+.table-header-coffee { background-color: #EFEBE9; color: #4E342E; }
+
+/* Print Style */
+@media print {
+    #sidebar-wrapper, .navbar, .btn-print, .card-header { display: none !important; }
+    #page-content-wrapper { margin: 0 !important; padding: 0 !important; width: 100% !important; }
+    .card { border: none !important; box-shadow: none !important; }
+}
+
+/* Responsif Mobile: Di HP, Toggled artinya Hilang total (biar layar lega) */
+@media (max-width: 768px) {
+    #sidebar-wrapper { margin-left: -260px; position: fixed; z-index: 1000; height: 100%; }
+    #wrapper.toggled #sidebar-wrapper { margin-left: 0; min-width: 260px; }
+    #wrapper.toggled #sidebar-wrapper .brand-text,
+    #wrapper.toggled #sidebar-wrapper .list-group-item span { display: inline; } 
+}
+
+/* --- PERBAIKAN TAMPILAN SAAT MINIMIZE (TOGGLED) --- */
+
+/* 1. Kecilkan Ikon Cangkir di Header */
+#wrapper.toggled .sidebar-heading i {
+    font-size: 1.5rem !important; /* Turunkan ukuran ikon */
+    margin: 0 auto; /* Pastikan rata tengah */
+}
+
+/* 2. Hilangkan Teks "Art'i Coffee" (Pastiin beneran hilang) */
+#wrapper.toggled .brand-text {
+    display: none !important;
+}
+
+/* 3. Kecilkan Foto Profil */
+#wrapper.toggled .avatar-img {
+    width: 35px !important;  /* Paksa lebar jadi 35px */
+    height: 35px !important; /* Paksa tinggi jadi 35px */
+}
+
+/* 4. Sesuaikan Ikon Pensil (Edit) biar pas sama foto kecil */
+#wrapper.toggled .edit-icon {
+    width: 15px;
+    height: 15px;
+    font-size: 9px;
+    right: -3px;
+    bottom: -3px;
+}
+
+/* 5. Sembunyikan Nama User & Role */
+#wrapper.toggled .profile-text {
+    display: none !important;
+}
+
+/* 6. Rapikan jarak padding profile biar ga terlalu tinggi */
+#wrapper.toggled .profile-section {
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Opsional: garis pemisah tipis */
+    margin-bottom: 10px;
+}
